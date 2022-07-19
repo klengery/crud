@@ -17,7 +17,7 @@
            <th scope="col">Descripcion</th>
            <th scope="col">Cantidad</th>
            <th scope="col">Precio</th>
-           <th scope="col">Acciones</th>
+           <th scope="col">Editar/Borrar</th>
        </tr>
     </thead>
 
