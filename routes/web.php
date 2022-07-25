@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::resource('articulos','App\Http\Controllers\ArticuloController');
+
 
 Route::middleware([
     'auth:sanctum',
@@ -27,4 +27,5 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::resource('items','App\Http\Controllers\ItemController');
 });

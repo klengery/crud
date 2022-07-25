@@ -7,9 +7,9 @@
 @stop
 
 @section('content')
-<a href="articulos/create" class="btn btn-primary mb-4">Crear</a>
+<a href="items/create" class="btn btn-primary mb-4">Crear</a>
 
-<table id="articulos" class="table table-striped table-bordered shadow-Ig mt-4" style="width:100%">
+<table id="items" class="table table-striped table-bordered shadow-Ig mt-4" style="width:100%">
     <thead class="bg-primary text-white">
        <tr>
            <th scope="col">ID</th>
@@ -22,16 +22,16 @@
     </thead>
 
     <tbody>
-        @foreach ($articulos as $articulo)
+        @foreach ($items as $item)
         <tr>
-            <td>{{$articulo->id}}</td>
-            <td>{{$articulo->codigo}}</td>
-            <td>{{$articulo->descripcion}}</td>
-            <td>{{$articulo->cantidad}}</td>
-            <td>{{$articulo->precio}}</td>
+            <td>{{$item->id}}</td>
+            <td>{{$item->codigo}}</td>
+            <td>{{$item->descripcion}}</td>
+            <td>{{$item->cantidad}}</td>
+            <td>{{$item->precio}}</td>
             <td>
-                <form action="{{route('articulos.destroy',$articulo->id)}}" method="POST">
-                <a href="/articulos/{{ $articulo->id}}/edit" class="btn btn-info">Editar</a>
+                <form action="{{route('items.destroy',$item->id)}}" method="POST">
+                <a href="/items/{{ $item->id}}/edit" class="btn btn-info">Editar</a>
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger">Borrar</button>
@@ -57,7 +57,7 @@
 
        <script>
          $(document).ready(function () {
-         $('#articulos').DataTable({
+         $('#items').DataTable({
             "lengthMenu":[[5,10,50-1], [5,10,50,"All"]]
          });       
          });
